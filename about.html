@@ -204,7 +204,23 @@
     /* ---------- RESPONSIVE FIX ---------- */
     @media (max-width: 768px) {
       .mobile-nav-toggle { display: block; }
-      .main-nav { display: none; }
+      .main-nav { 
+        display: none; 
+        position: fixed;
+        top: 72px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        z-index: 1000;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 200px;
+      }
+      .main-nav.open {
+        display: flex;
+      }
       .about-hero h1 { font-size: 2.5rem; }
       .about-hero { padding: 60px 20px; }
       .about-content, .factory-image-section, .certs { padding: 30px 20px; }
@@ -278,6 +294,13 @@
 
   <script>
     document.getElementById('year2').textContent = new Date().getFullYear();
+    
+    // Mobile nav toggle
+    const btn = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    if (btn && nav) {
+      btn.addEventListener('click', ()=> nav.classList.toggle('open'));
+    }
   </script>
 </body>
 </html>
