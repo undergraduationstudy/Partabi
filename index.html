@@ -424,4 +424,19 @@
         Email: <a href="mailto:partabi@gmail.com">partabi@gmail.com</a><br>
         WhatsApp: <a href="https://wa.me/9170808494" target="_blank">+91123456789</a>
       </div>
-      <div class="copyright">© <span id="year"></span> Partabi
+      <div class="copyright">© <span id="year"></span> Partabi. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobile nav toggle
+    const btn = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    if (btn && nav) {
+      btn.addEventListener('click', ()=> nav.classList.toggle('open'));
+    }
+  </script>
+</body>
+</html>
