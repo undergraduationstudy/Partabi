@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Seasonings - BIO-TECH</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        min-height: 100vh;
+        color: #333;
+    }
+    .header { 
+        text-align: center; 
+        padding: 60px 20px; 
+        background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+    }
+    .header h1 { 
+        font-size: 3.5rem; 
+        margin-bottom: 15px; 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        position: relative;
+        z-index: 1;
+    }
+    .header p { 
+        font-size: 1.3rem; 
+        opacity: 0.9; 
+        position: relative;
+        z-index: 1;
+    }
+    .products { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 30px; 
+        padding: 50px 20px; 
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .product-card { 
+        background: white;
+        border-radius: 20px; 
+        padding: 25px; 
+        text-align: center; 
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    .product-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+    .product-card:hover::before {
+        left: 100%;
+    }
+    .product-card:hover { 
+        transform: translateY(-10px) scale(1.02); 
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .product-card img { 
+        width: 100%; 
+        height: 220px; 
+        object-fit: contain; 
+        border-radius: 15px; 
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+    .product-card h4 { 
+        margin: 15px 0 10px; 
+        font-size: 1.4rem;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    .product-card .description { 
+        margin: 8px 0; 
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.4;
+    }
+    .product-card .pack-size { 
+        margin: 8px 0; 
+        font-size: 0.9rem;
+        color: #e74c3c;
+        font-weight: 600;
+        background: #fff5f5;
+        padding: 5px 10px;
+        border-radius: 15px;
+        display: inline-block;
+    }
+    .price-tag {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        .header { padding: 40px 20px; }
+        .header h1 { font-size: 2rem; }
+        .header p { font-size: 1.1rem; }
+        .products { 
+            grid-template-columns: 1fr; 
+            gap: 20px;
+            padding: 30px 20px;
+        }
+        .product-card { padding: 20px; }
+        .product-card img { height: 180px; }
+        .product-card h4 { font-size: 1.2rem; }
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Premium Seasonings</h1>
+    <p>Transform your dishes with our aromatic and flavorful seasoning blends</p>
+</div>
+
+<div class="products">
+    <div class="product-card">
+        <img src="s1.jpg" alt="Chaat Masala">
+        <h4>Chaat Masala</h4>
+        <p class="description">Tangy and spicy blend perfect for street food, fruits, and snacks</p>
+        <p class="pack-size">Available in: 50g, 100g</p>
+        <div class="price-tag">Starting ₹25</div>
+    </div>
+    <div class="product-card">
+        <img src="s2.jpg" alt="Garam Masala">
+        <h4>Garam Masala</h4>
+        <p class="description">Aromatic blend of warm spices that adds depth to curries and rice dishes</p>
+        <p class="pack-size">Available in: 50g, 100g</p>
+        <div class="price-tag">Starting ₹30</div>
+    </div>
+    <div class="product-card">
+        <img src="s3.jpg" alt="Tandoori Masala">
+        <h4>Tandoori Masala</h4>
+        <p class="description">Spicy blend perfect for marinating meats and vegetables for grilling</p>
+        <p class="pack-size">Available in: 50g, 100g</p>
+        <div class="price-tag">Starting ₹35</div>
+    </div>
+    <div class="product-card">
+        <img src="s4.jpg" alt="Kitchen King">
+        <h4>Kitchen King</h4>
+        <p class="description">Versatile all-purpose seasoning that enhances the flavor of any dish</p>
+        <p class="pack-size">Available in: 50g, 100g</p>
+        <div class="price-tag">Starting ₹28</div>
+    </div>
+</div>
+
+</body>
+</html>

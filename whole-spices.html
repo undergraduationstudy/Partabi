@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Whole Spices - BIO-TECH</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #333;
+    }
+    .header { 
+        text-align: center; 
+        padding: 60px 20px; 
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+    }
+    .header h1 { 
+        font-size: 3.5rem; 
+        margin-bottom: 15px; 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        position: relative;
+        z-index: 1;
+    }
+    .header p { 
+        font-size: 1.3rem; 
+        opacity: 0.9; 
+        position: relative;
+        z-index: 1;
+    }
+    .products { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 30px; 
+        padding: 50px 20px; 
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .product-card { 
+        background: white;
+        border-radius: 20px; 
+        padding: 25px; 
+        text-align: center; 
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    .product-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+    .product-card:hover::before {
+        left: 100%;
+    }
+    .product-card:hover { 
+        transform: translateY(-10px) scale(1.02); 
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .product-card img { 
+        width: 100%; 
+        height: 220px; 
+        object-fit: contain; 
+        border-radius: 15px; 
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+    .product-card h4 { 
+        margin: 15px 0 10px; 
+        font-size: 1.4rem;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    .product-card .description { 
+        margin: 8px 0; 
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.4;
+    }
+    .product-card .pack-size { 
+        margin: 8px 0; 
+        font-size: 0.9rem;
+        color: #e74c3c;
+        font-weight: 600;
+        background: #fff5f5;
+        padding: 5px 10px;
+        border-radius: 15px;
+        display: inline-block;
+    }
+    .price-tag {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        .header { padding: 40px 20px; }
+        .header h1 { font-size: 2rem; }
+        .header p { font-size: 1.1rem; }
+        .products { 
+            grid-template-columns: 1fr; 
+            gap: 20px;
+            padding: 30px 20px;
+        }
+        .product-card { padding: 20px; }
+        .product-card img { height: 180px; }
+        .product-card h4 { font-size: 1.2rem; }
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Premium Whole Spices</h1>
+    <p>Discover the authentic flavors of handpicked, premium whole spices from around the world</p>
+</div>
+
+<div class="products">
+    <!-- Example Product -->
+    <div class="product-card">
+        <img src="ws1.jpg" alt="Jeera">
+        <h4>Jeera (Cumin)</h4>
+        <p class="description">Aromatic cumin seeds with earthy, warm flavor essential for Indian cooking</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws2.jpg" alt="Kalinagar Magaj">
+        <h4>Kalinagar Magaj</h4>
+        <p class="description">Premium quality melon seeds with rich, nutty flavor perfect for sweets and snacks</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws3.jpg" alt="Halim">
+        <h4>Halim (Garden Cress)</h4>
+        <p class="description">Nutritious garden cress seeds with peppery taste, great for health drinks</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws4.jpg" alt="Jaiphal">
+        <h4>Jaiphal (Nutmeg)</h4>
+        <p class="description">Aromatic nutmeg with warm, sweet flavor perfect for desserts and beverages</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws5.jpg" alt="Kalonji">
+        <h4>Kalonji (Black Cumin)</h4>
+        <p class="description">Black cumin seeds with distinctive flavor, essential for breads and pickles</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws6.jpg" alt="Rawal Gav">
+        <h4>Rawal Gav (Garden Cress)</h4>
+        <p class="description">Nutritious garden cress seeds with peppery taste, great for health drinks and salads</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws7.jpg" alt="Ramdana">
+        <h4>Ramdana (Amaranth)</h4>
+        <p class="description">Nutritious amaranth seeds packed with protein and essential amino acids</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws8.jpg" alt="Prasad">
+        <h4>Prasad (Sesame Seeds)</h4>
+        <p class="description">Pure white sesame seeds rich in calcium and healthy fats, perfect for sweets</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws9.jpg" alt="Badi Elaichi">
+        <h4>Badi Elaichi (Black Cardamom)</h4>
+        <p class="description">Large black cardamom with smoky, earthy flavor perfect for biryanis and curries</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws10.jpg" alt="Khas Khas">
+        <h4>Khas Khas (Poppy Seeds)</h4>
+        <p class="description">White poppy seeds with nutty flavor, essential for traditional Indian sweets</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws11.jpg" alt="Kali Mirich">
+        <h4>Kali Mirich (Black Pepper)</h4>
+        <p class="description">Premium black peppercorns with sharp, spicy heat and aromatic flavor</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws12.jpg" alt="Sabja">
+        <h4>Sabja (Basil Seeds)</h4>
+        <p class="description">Tiny basil seeds that swell in water, perfect for refreshing drinks and desserts</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws13.jpg" alt="Dalchini">
+        <h4>Dalchini (Cinnamon)</h4>
+        <p class="description">Sweet and warm cinnamon sticks perfect for desserts, tea, and savory dishes</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws14.jpg" alt="Dhanya">
+        <h4>Dhanya (Coriander Seeds)</h4>
+        <p class="description">Aromatic coriander seeds with citrusy, slightly sweet flavor for curries and pickles</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws15.jpg" alt="Methi">
+        <h4>Methi (Fenugreek Seeds)</h4>
+        <p class="description">Bitter-sweet fenugreek seeds with maple-like aroma, great for tempering and pickles</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws16.jpg" alt="Ajwain">
+        <h4>Ajwain (Carom Seeds)</h4>
+        <p class="description">Pungent carom seeds with thyme-like flavor, excellent for digestive health</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws17.jpg" alt="Starphool">
+        <h4>Starphool (Star Anise)</h4>
+        <p class="description">Star-shaped spice with licorice-like flavor, perfect for biryanis and teas</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws18.jpg" alt="Alsi">
+        <h4>Alsi (Flax Seeds)</h4>
+        <p class="description">Nutritious flax seeds rich in omega-3 fatty acids and fiber</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws19.jpg" alt="Safed Til">
+        <h4>Safed Til (White Sesame)</h4>
+        <p class="description">Creamy white sesame seeds with mild, nutty flavor for sweets and breads</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws20.jpg" alt="Kala Til">
+        <h4>Kala Til (Black Sesame)</h4>
+        <p class="description">Rich black sesame seeds with intense nutty flavor, perfect for traditional sweets</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws21.jpg" alt="Pili Rai">
+        <h4>Pili Rai (Yellow Mustard)</h4>
+        <p class="description">Yellow mustard seeds with mild, tangy flavor perfect for pickles and tempering</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws22.jpg" alt="Barik Rai">
+        <h4>Barik Rai (Fine Mustard)</h4>
+        <p class="description">Fine mustard seeds with sharp, pungent flavor for pickles and chutneys</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws23.jpg" alt="Rai">
+        <h4>Rai (Black Mustard)</h4>
+        <p class="description">Black mustard seeds with strong, pungent flavor essential for Indian cooking</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws24.jpg" alt="Elaichi">
+        <h4>Elaichi (Green Cardamom)</h4>
+        <p class="description">Aromatic green cardamom pods with sweet, floral flavor for desserts and tea</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws25.jpg" alt="Lawang">
+        <h4>Lawang (Cloves)</h4>
+        <p class="description">Aromatic cloves with warm, sweet-spicy flavor perfect for biryanis and desserts</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws26.jpg" alt="Panch Poran">
+        <h4>Panch Poran (Five Spice Mix)</h4>
+        <p class="description">Traditional Bengali five-spice blend perfect for tempering and flavoring dishes</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    <div class="product-card">
+        <img src="ws27.jpg" alt="Akha Masala">
+        <h4>Akha Masala (Whole Spice Mix)</h4>
+        <p class="description">Premium blend of whole spices creating a perfect balance of flavors for any dish</p>
+        <p class="pack-size">Available in: 100g, 1kg</p>
+        <div class="price-tag">Starting ₹10</div>
+    </div>
+    
+    <!-- Add more products from catalogue -->
+</div>
+
+</body>
+</html>

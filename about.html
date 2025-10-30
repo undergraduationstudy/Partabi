@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Partabi Foods</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* ---------- HEADER ---------- */
+    .site-header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    .site-header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand img {
+      height: 50px;
+      width: auto;
+    }
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .main-nav a:hover, .main-nav a.active {
+      color: #667eea;
+    }
+    .btn-outline {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: transform 0.3s ease;
+    }
+    .btn-outline:hover {
+      transform: translateY(-2px);
+    }
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .about-page {
+      background: white;
+      margin: 2rem auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .about-hero {
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      color: white;
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+    .about-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    .lead {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-content {
+      padding: 60px 40px;
+    }
+    .content-text {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .content-text h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    .content-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: #666;
+    }
+    .content-text ul {
+      list-style: none;
+      padding: 0;
+    }
+    .content-text li {
+      padding: 0.5rem 0;
+      color: #666;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .content-text li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #27ae60;
+      font-weight: bold;
+    }
+
+    .factory-image-section {
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    .factory-image-section img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .certs {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .certs h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    .certs p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .site-footer {
+      background: #2c3e50;
+      color: white;
+      padding: 3rem 0;
+    }
+    .site-footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: block;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-inner a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    /* ---------- RESPONSIVE FIX ---------- */
+    @media (max-width: 768px) {
+      .mobile-nav-toggle { display: block; }
+      .main-nav { display: none; }
+      .about-hero h1 { font-size: 2.5rem; }
+      .about-hero { padding: 60px 20px; }
+      .about-content, .factory-image-section, .certs { padding: 30px 20px; }
+      .content-text { padding: 0; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img src="logo.jpg" alt="Partabi Logo" class="logo"/></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="btn-outline">Contact</a>
+      </nav>
+      <button class="mobile-nav-toggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="about-page">
+    <section class="about-hero">
+      <h1>About Partabi</h1>
+      <p class="lead">A brand by Pratham Foods — committed to delivering natural, high-quality food ingredients to homes and businesses.</p>
+    </section>
+
+    <section class="about-content">
+      <div class="content-text">
+        <h3>Who we are</h3>
+        <p>Partabi is dedicated to sourcing and manufacturing premium spices, dry fruits, pastes, pasta, soya chunks, seasonings, vermicelli, salt & soda using hygienic practices and modern production methods.</p>
+
+        <h3>Our Values</h3>
+        <ul>
+          <li>Purity & Quality</li>
+          <li>Hygiene & Safety</li>
+          <li>Customer Trust</li>
+          <li>Reliability in supply</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="factory-image-section">
+      <img src="placeholder-factory.jpg" alt="Partabi Foods Manufacturing Facility" />
+    </section>
+
+    <section class="certs">
+      <h3>Certifications & Quality Control</h3>
+      <p>We follow rigorous quality checks throughout the production, packing and storage stages to ensure food safety and product consistency.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong>Partabi</strong><br>
+          Virar (West), Mumbai, Maharashtra, India<br>
+          Email: <a href="mailto:partabi@gmail.com">partabi@gmail.com</a><br>
+          WhatsApp: <a href="https://wa.me/9170808494" target="_blank">+91 70808494</a>
+        </div>
+        <div class="copyright">© <span id="year2"></span> Partabi. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
